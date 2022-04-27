@@ -1,0 +1,132 @@
+- pages:
+    - name: "Global au site"
+      blocks:
+        - name: Intitulés de boutons
+          errors:
+            - name: |
+                Éviter les caractères spéciaux ("\ue814", "\ue80e", etc.) au début de l'intitulé de certains boutons
+              description: |
+                Éviter les caractères spéciaux dans les intitulés de bouton.
+                Par exemple : "\ue814 Envoyer message".  
+                Note : "Envoyer" ou "Envoyer le message" serait
+                plus intelligible que "Envoyer message".  
+                Aussi : "\ue80eImprimer la page".
+
+                **Recommandation** :  
+                Utiliser la pseudo-classe CSS "::before" pour ajouter un visuel en début de message (si nécessaire…)
+              delivery: Notes annexes
+              status: moindre
+
+        - name: Liens ouvrant une nouvelle fenêtre
+          errors:
+            - name: |
+                Penser à ajouter des attributs `title` aux liens
+                `target="_blank"`
+              description: |
+                Pour prévenir l'utilisateur qu'un changement de contexte, mieux vaut explicitement indiquer
+                qu'une nouvelle fenêtre va s'ouvrir dans l'intitulé de ce type de liens
+              delivery: Notes annexes
+              status: moindre
+
+    - name: Accueil
+      blocks:
+        - name: Bugs
+          errors:
+            - name: Site non fonctionnel en anglais et en espagnol
+              description: |
+                Le widget de changement de langue fonctionne mais mène vers des pages d'erreur pour l'anglais et l'espagnol
+              delivery: Notes annexes
+              status: important
+
+    - name: Contact
+      blocks:
+        - name: |
+            Général
+          errors:
+            - name: Bug
+              description: |
+                Erreur JS dans la console :  
+                `js_ngfSWMmYq3zte5CdT0z0I_GTzBYaI-h3nP892wAWwZs.js:47 Uncaught TypeError: Cannot read properties of undefined (reading 'DEFAULTS')`
+
+                **Recommandation** :  
+                Corriger l'erreur JS
+              delivery: Notes annexes
+              status: important
+        - name: |
+            Date de naissance (tooltip)
+          errors:
+            - name: Typos
+              description: |
+                Le mot "créer" dans la phrase "Seules les personnes majeures peuvent
+                cr&eacute;er un compte sur le site du SHD" est mal écrit.
+
+                **Recommandation** :  
+                Remplacer "cr&eacute;er" par "créer"
+              delivery: Notes annexes
+              status: moindre
+        - name: |
+            Formulaire de contact
+          errors:
+            - name: Contrôle de saisie insuffisant
+              description: |
+                Attention à bien vérifier les champs de saisie, coté client ET côté serveur.  
+                Par exemple, on peut entrer un code postal "99999" ou un numéro de téléphone 'nimportequoi'
+
+                **Recommandation** :  
+                Renforcer le contrôle de saisie du formulaire de contact, côté client ET côté serveur.
+              delivery: Notes annexes
+              status: moindre
+        - name: |
+            Général
+          errors:
+            - name: Message de statut
+              description: |
+                Après avoir envoyé un premier message, il semblerait qu'à chaque fois que l'on retourne
+                sur le formulaire de contact (en étant connecté à son compte), un message d'information apparait :
+                "Vous avez déjà soumis ce formulaire"
+
+                **Recommandation** :  
+                Permettre à l'usager d'écrire plusieurs messages au SHD sans faire apparaitre
+                de message de type "Vous avez déjà soumis ce formulaire"
+              delivery: Notes annexes
+              status: moindre
+        - name: |
+            Bas de page
+          errors:
+            - name: Intitulé de lien isolé non explicite
+              description: |
+                Le lien "ici" dans la phrase "Accessibilité : vous pouvez consulter la déclaration d'accessibilité ici",
+                pris seul, n'est pas suffisemment explicite.
+                Pareil pour "ici" dans "Le détail des traitements et des finalités sont consultables ici" et
+                dans "Soit ici, soit en écrivant par courrier postal"
+
+                **Recommandation** :  
+                Reformuler pour mettre le lien sur des textes tels que "Déclaration d'accessibilité"
+              delivery: Notes annexes
+              status: moindre
+        - name: |
+            Objet de votre demande, message (tooltip)
+          errors:
+            - name: Mauvais texte
+              description: |
+                Le message d'aide est incohérent ("Lien vers FAQ 1. lien 1, 2. lien 2")
+                **Recommandation** :  
+                Changer pour un texte cohérent
+              delivery: Notes annexes
+              status: moindre
+
+    - name: "E-mail de notification"
+      blocks:
+        - name:
+            E-mail de confirmation d'envoi de message via le formulaire de
+            contact
+          errors:
+            - name: |
+                L'e-mail de confirmation d'envoi de message comporte des éléments HTML.
+              description: |
+                Le formatage des e-mails de notification semble incorrect et comporte des éléments HTML tels que des `<br>`.
+
+                **Recommandation** :  
+                Corriger le formatage des e-mails de notification
+              delivery: Notes annexes
+              status: moindre
