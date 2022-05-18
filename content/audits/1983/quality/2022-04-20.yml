@@ -28,6 +28,34 @@
               delivery: Notes annexes
               status: moindre
 
+        - name: Typographie
+          errors:
+            - name: |
+                Ne pas mettre les mots en majuscules
+              description: |
+                Éviter de mettre toutes les lettres des mots en majuscule.  
+                Si c'est un effet de style qui est recherché, préférer l'utilisation des styles CSS.
+
+                **Recommandation** :  
+                Ne pas utiliser les majuscules sur toutes les lettres des mots.
+              delivery: Notes annexes
+              status: moindre
+
+        - name: Éditorial
+          errors:
+            - name: |
+                Traduire tous les textes dans la bonne langues
+              description: |
+                De nombreux textes sont en anglais sur le site français.
+
+                **Recommandation** :  
+                Traduire touts les textes anglais en français. Par exemple :
+                - le message d'erreur "The form has become outdated. Press the back button,
+                  copy any unsaved work in the form, and then reload the page."
+                - l'inititulé sur les étapes de la démarche "Réservation de cotes" : "Edit 'Identité du demandeur' (1 of 4)"
+              delivery: Notes annexes
+              status: important
+
     - name: Accueil
       blocks:
         - name: Bugs
@@ -130,3 +158,53 @@
                 Corriger le formatage des e-mails de notification
               delivery: Notes annexes
               status: moindre
+
+    - name: Foire aux questions
+      blocks:
+        - name: Liens
+          errors:
+            - name: Liens peu explicites
+              description: |
+                Éviter les liens tels que "En savoir plus" qui ont besoin d'un contexte pour être explicites
+
+                **Recommandation** :  
+                Changer "En savoir plus" par (par exemple) : "En savoir plus sur la carte du combattant"
+              delivery: Notes annexes
+              status: important
+            - name: Liens cassés
+              description: |
+                Quelques liens mènent à des pages inexistantes. Par exemple, à la rubrique
+                "Je suis militaire. Les administrations compétentes pour mes droits à pension",
+                le lien "En savoir plus" (Extrait du service national) mène vers une erreur 404 :
+                "https://www.defense.gouv.fr/english/sga/liste-infos-pratiques/obtenir-ses-etats-de-service/extrait-de-service-accompli-national-ou-militaire"
+
+                **Recommandation** :  
+                Vérifier tous les liens du sites à l'aide d'outils tels que [Link Checker (W3C)](https://validator.w3.org/checklink)
+              delivery: Notes annexes
+              status: important
+
+    - name: Réserver un document en salle
+      blocks:
+        - name: Général
+          errors:
+            - name: Typos
+              description: |
+                **Recommandation** :  
+                Remplacer :
+                - "II est indispensable" par "Il est indispensable" (aussi sur la page
+                [Réservation de cotes](https://www.servicehistorique.sga.defense.gouv.fr/form/resa-cote-archiv-biblio-salle))
+
+    - name: Réservation de cotes
+      blocks:
+        - name: Bugs
+          errors:
+            - name: Imprimer la page
+              description: |
+                La page imprimée contient des textes qui se superposent
+        - name: Tableaux
+          errors:
+            - name: Utiliser des tableaux de données lorsque cela s'y prête
+              description: |
+                À l'étape 3, 2 tableaux sont structurés comme des tableaux de mise en forme
+                (attribut `role="presentation"`) alors qu'ils pourraient tout à fait être des
+                tableaux de données et profiter des en-têtes de colonne.
