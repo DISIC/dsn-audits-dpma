@@ -55,6 +55,30 @@
                 - l'inititulé sur les étapes de la démarche "Réservation de cotes" : "Edit 'Identité du demandeur' (1 of 4)"
               delivery: Notes annexes
               status: important
+            - name: |
+                Clarifier les actions de boutons de validation de pages de formulaire (Recherche administrative)
+              description: |
+                Remplacer "Précédent / Page suivante" puis "Retour / Suivant" par des termes plus précis.
+
+                **Recommandation** :  
+                - 1ère page : uniquement "Suivant", ou alors "Commencer"
+                - pages suivantes : "Précédent" et "Suivant"
+                - dernière page : "Précédent" et "Valider"
+              delivery: Notes annexes
+              status: important
+
+        - name: Pied de page
+          errors:
+            - name: |
+                Le logo data.gouv.fr ne s'affiche pas
+              description: |
+                Mauvaise URL ?
+
+                **Recommandation** :  
+                Corriger l'URL de l'image ("/themes/custom_theme/images/data_gouv_fr.png")
+                Note : en remplaçant par "https://www.servicehistorique.sga.defense.gouv.fr//themes/custom_theme/images/data_gouv_fr.png" (avec 2 "//" avant "themes") cela semble fonctionner…
+              delivery: Notes annexes
+              status: moindre
 
     - name: Accueil
       blocks:
@@ -123,7 +147,7 @@
           errors:
             - name: Intitulé de lien isolé non explicite
               description: |
-                Le lien "ici" dans la phrase "Accessibilité : vous pouvez consulter la déclaration d'accessibilité ici",
+                Le lien "ici" dans la phrase "Accessibilité : vous pouvez consulter la déclaration d'accessibilité ici",
                 pris seul, n'est pas suffisemment explicite.
                 Pareil pour "ici" dans "Le détail des traitements et des finalités sont consultables ici" et
                 dans "Soit ici, soit en écrivant par courrier postal"
@@ -208,3 +232,11 @@
                 À l'étape 3, 2 tableaux sont structurés comme des tableaux de mise en forme
                 (attribut `role="presentation"`) alors qu'ils pourraient tout à fait être des
                 tableaux de données et profiter des en-têtes de colonne.
+
+    - name: Recherche administrative
+      blocks:
+        - name: Bugs
+          errors:
+            - name: Imprimer la page
+              description: |
+                La page imprimée contient des textes qui se superposent
